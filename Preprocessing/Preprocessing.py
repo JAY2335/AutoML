@@ -35,8 +35,8 @@ def null_processing(dataset,option):
 def encoding(dataset):
   try:
     le=LabelEncoder()
-    y=dataset['target']
-    if y.dtype=='object':
+  
+    if dataset['target'].dtype=='object':
       y=dataset['target'].values
       y=le.fit_transform(y)
     else:

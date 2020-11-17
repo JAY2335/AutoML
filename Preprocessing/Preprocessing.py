@@ -36,11 +36,11 @@ def encoding(dataset):
   try:
     le=LabelEncoder()
     y=dataset['target']
-  except Exception as e:
-    return -1,e,dataset
-  try:
     if y.dtype=='object':
+      y=dataset['target'].values
       y=le.fit_transform(y)
+    else:
+      y=dataset['target'].values
   except Exception as e:
     return -1,e,dataset
   

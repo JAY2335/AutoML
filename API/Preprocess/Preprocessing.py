@@ -13,13 +13,13 @@ def null_processing(dataset, option):
     object_col=[i for i in null_columns if dataset[f"{i}"].dtype=='object']
   
   except Exception as e:
-    return -1,e + '[Error During Encoding]',dataset
+    return -1,str(e) + '[Error During Encoding]',dataset
   
   try:
     for i in object_col:
       dataset[f"{i}"].fillna(method='ffill',inplace=True)
   except Exception as e:
-    return -1,e + '[Error During Encoding]',dataset
+    return -1,str(e) + '[Error During Encoding]',dataset
 
   try:
     if (option=="mean"):
@@ -30,7 +30,7 @@ def null_processing(dataset, option):
       dataset.fillna(dataset.mode(),inplace=True)
 
   except Exception as e:
-    return -1,e + '[Error During Filling]',dataset
+    return -1,str(e) + '[Error During Filling]',dataset
 
   return 0,'DONE',dataset
 
@@ -45,14 +45,14 @@ def encoding(dataset):
     else:
       y=dataset['target'].values
   except Exception as e:
-    return -1,e + '[Error During Encoding]',dataset
+    return -1,str(e) + '[Error During Encoding]',dataset
   
   try:
     dataset.drop(['target'],inplace=True,axis=1)
     dataset=pd.get_dummies(dataset,columns=None,drop_first=True)
     X=dataset.iloc[:,:].values
   except Exception as e:
-    return -1,e + '[Error During Encoding]',dataset
+    return -1,str(e) + '[Error During Encoding]',dataset
   
   return 0,'DONE PREPROCESSING',dataset
 

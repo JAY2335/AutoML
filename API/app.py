@@ -3,20 +3,20 @@ import os
 import pandas as pd
 from flask_cors import CORS, cross_origin
 from Preprocess.Preprocessing import *
+import json as j
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 KEY = '-Lt_tWbTpuvtgkTHmhk9LA'
 
 @app.route('/api/preprocess', methods=['POST'])
 def preprocess():
-    print(request.headers['Content_type'])
     if request.headers['content_type'] != 'application/json':
         return {'result': 'Invalid Content Type'}
     try:
         OPTION = request.args['mode'].lower()
     except:
         return {'result': 'no option provided','file': {}}
-    FILE_DATA = dict(request.get_json(force=True))
+    FILE_DATA = request.get_json(force=True)
     DATASET = pd.DataFrame(FILE_DATA)
     ORIENT = 'columns'
     if OPTION == 'none':

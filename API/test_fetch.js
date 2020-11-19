@@ -34,22 +34,22 @@ const DUMMY_DATA_2 =     [
         "age": "32"
        },
    ];
-function api_post(url){
+function api_post(url, data){
     const headers = {
         Key: '-Lt_tWbTpuvtgkTHmhk9LA',
         "content_type": 'application/json'
     };
     fetch(url, {
         method: 'POST',
-        body: JSON.stringify(DUMMY_DATA_1),
-        json: JSON.stringify(DUMMY_DATA_1),
+        body: JSON.stringify(data),
+        json: JSON.stringify(data),
         headers:new Headers({'content-type': 'application/json'})
             
         }).then(response => response.json())
         .then(data => console.log(data));
 }
 
-function refactor(dataset){
+function sub_refactor(dataset){
     const row = new Object(dataset[0]);
     const key = Object.keys(row);
     const result =new Object();
@@ -65,4 +65,10 @@ function refactor(dataset){
     return result
 }
 
-api_post()
+function csv_json_refactor(path){
+    let csvToJson = require('convert-csv-to-json');
+    let fileInputName = path;
+    let json = csvToJson.formatValueByType().getJsonFromCsv(fileInputName);
+    return sub_refactor(json);
+}
+api_post('http://127.0.0.1:5000/api/preprocess?mode=mean',csv_json_refactor('test_iris.csv'))

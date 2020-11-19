@@ -71,5 +71,11 @@ function csv_json_refactor(path){
     let json = csvToJson.formatValueByType().getJsonFromCsv(fileInputName);
     return sub_refactor(json);
 }
-api_post('http://127.0.0.1:5000/api/preprocess?mode=mean',csv_json_refactor('test_iris.csv'))
+api_post('http://127.0.0.1:5000/api/preprocess?mode=mean', csv_json_refactor('test_iris.csv'))
 // api_post('http://127.0.0.1:5000/api/preprocess?mode=mean', DUMMY_DATA_1)
+
+// user gives you data
+// mode=None
+// filing 
+// mode=mean or median or mode
+// npm install convert-csv-to-json --save

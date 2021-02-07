@@ -48,9 +48,9 @@ def encoding(dataset):
     return -1,str(e) + '[Error During Encoding]',dataset
   
   try:
-    dataset.drop(['target'],inplace=True,axis=1)
+    #dataset.drop(['target'],inplace=True,axis=1)
     dataset=pd.get_dummies(dataset,columns=None,drop_first=True)
-    X=dataset.iloc[:,:].values
+    #X=dataset.iloc[:,:].values
   except Exception as e:
     return -1,str(e) + '[Error During Encoding]',dataset
   

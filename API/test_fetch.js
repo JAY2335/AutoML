@@ -65,13 +65,19 @@ function sub_refactor(dataset){
     return result
 }
 
+
 function csv_json_refactor(path){
     let csvToJson = require('convert-csv-to-json');
     let fileInputName = path;
     let json = csvToJson.formatValueByType().getJsonFromCsv(fileInputName);
     return sub_refactor(json);
+    
 }
-api_post('http://127.0.0.1:5000/api/preprocess?mode=mean', csv_json_refactor('test_iris.csv'))
+
+
+csv_json_refactor('test_iris.csv')
+
+// api_post('http://127.0.0.1:5000/api/preprocess?mode=mean', csv_json_refactor('test_iris.csv'))
 // api_post('http://127.0.0.1:5000/api/preprocess?mode=mean', DUMMY_DATA_1)
 
 // user gives you data

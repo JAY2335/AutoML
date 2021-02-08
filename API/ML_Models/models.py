@@ -47,10 +47,10 @@ def train_preprocess(dataset):
         i.fit(X_train,y_train)
       model_scores={pipe_dict[i]:model.score(X_test,y_test) for i,model in enumerate(pipelines)}
 
-    except:
-      print('Dead')
+    except Exception as e:
+      return -1,str(e) + '[Error During ETL]',{}
 
-    return model_scores
+    return 0, 'DONE', model_scores
         #print('{} Pipeline_Accuracy : {}  '.format(pipe_dict[i],model.score(X_test,y_test)))
 
   else:
@@ -68,8 +68,8 @@ def train_preprocess(dataset):
         i.fit(X_train,y_train)
       model_scores={pipe_dict[i]:model.score(X_test,y_test) for i,model in enumerate(pipelines)}
 
-    except:
-      print('Dead')
+    except Exception as e:
+      return -1,str(e) + '[Error During ETL]',{}
 
-    return model_scores
+    return 0, 'DONE',model_scores
  

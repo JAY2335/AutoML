@@ -56,7 +56,7 @@ function sub_refactor(dataset){
     for(var i=0; i<key.length;i++){
         result[key[i]] = [];
     }
-    con.forEach(element => {
+    dataset.forEach(element => {
         for(var key in element){
             result[key].push(element[key]);
         }
@@ -75,7 +75,7 @@ function csv_json_refactor(path){
 }
 
 
-csv_json_refactor('test_iris.csv')
+sub_refactor(DUMMY_DATA_2)
 
 // api_post('http://127.0.0.1:5000/api/preprocess?mode=mean', csv_json_refactor('test_iris.csv'))
 // api_post('http://127.0.0.1:5000/api/preprocess?mode=mean', DUMMY_DATA_1)

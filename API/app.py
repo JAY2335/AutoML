@@ -28,7 +28,7 @@ def preprocess():
     }
 """
     if request.headers['content_type'] != 'application/json':
-        return {'result': 'Invalid Content Type'}
+        return {'result': 'JAY'}
     try:
         OPTION = request.args['mode'].lower()
     except:
@@ -37,9 +37,11 @@ def preprocess():
     DATASET = pd.DataFrame(FILE_DATA)
     ORIENT = 'columns'
     if OPTION == 'none':
-        json = eval(DATASET.to_json(orient=ORIENT))
-        return {'result': 'NO', 'file': json} if null_checking(DATASET) \
-            else {'result': 'YES', 'file': json}
+        try:
+            json = eval(DATASET.to_json(orient=ORIENT))
+        except:
+            return {'error':'yes'}
+        return {'result': 'YES', 'file': json} if null_checking(DATASET) else {'result': 'NO', 'file': json}
     elif OPTION == 'mean' or OPTION == 'median' or OPTION == 'mode':
         code, msg_1, dataset = null_processing(DATASET, OPTION.lower()) # UD
         if code == 0:

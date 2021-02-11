@@ -1,8 +1,8 @@
 const DUMMY_DATA_1
  = {
-    Students: {0:'Armin', 1:'Miguel', 2:'Rossum'},
-    Results: {0:99, 1:null, 2:100},
-    target: {0:0, 1:0,2:1}
+    Students: ['Armin', 'Miguel', 'Rossum'],
+    Results: [1, "null", 100],
+    target: [0, 0, 1]
 }
 const DUMMY_DATA_2 =     [
     {
@@ -75,10 +75,10 @@ function csv_json_refactor(path){
 }
 
 
-sub_refactor(DUMMY_DATA_2)
+// sub_refactor(DUMMY_DATA_2)
 
 // api_post('http://127.0.0.1:5000/api/preprocess?mode=mean', csv_json_refactor('test_iris.csv'))
-// api_post('http://127.0.0.1:5000/api/preprocess?mode=mean', DUMMY_DATA_1)
+api_post('https://a46b8bcd38ab.ngrok.io/api/preprocess?mode=none', DUMMY_DATA_1)
 
 // user gives you data
 // mode=None

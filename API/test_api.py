@@ -18,7 +18,7 @@ headers = \
     'key': '-Lt_tWbTpuvtgkTHmhk9LA',
     'content_type': 'application/json'
 }
-res = req.post(url="http://127.0.0.1:5000/api/train",headers=headers, json=data)
+res = req.post(url="https://8f7114180114.ngrok.io/api/train",headers=headers, json=data)
 print(res.status_code)
 print(res)
 # 'content_length', 'content_type', 'filename', 'headers', 'mimetype', 'mimetype_params', 'name', 'save', 'stream'

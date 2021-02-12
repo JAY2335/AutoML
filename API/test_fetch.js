@@ -85,3 +85,36 @@ api_post('https://a46b8bcd38ab.ngrok.io/api/preprocess?mode=none', DUMMY_DATA_1)
 // filing 
 // mode=mean or median or mode
 // npm install convert-csv-to-json --save
+
+const DUMMY_DATA_3
+ = {
+    students: {0:1, 1:0, 2:5.3, 3: "null"},
+    results: {0:1, 1:4, 2:100},
+    target: {0:'iris', 1:'marigold', 2:'sunflower'}
+}
+
+
+function response_refactor(dataset){
+    let keys = Object.keys(dataset);
+    // console.log(keys);
+    let result = new Object();
+    for(var i=0; i<keys.length;i++){
+        result[keys[i]] = [];
+    }
+    for (const key in dataset) {
+        if (dataset.hasOwnProperty(key)) {
+            const j = dataset[key];
+
+            // console.log(j);
+            for (const val in j) {
+                if (j.hasOwnProperty(val)) {
+                    const e_val = j[val];
+                    result[key].push(e_val);
+                }
+            }
+        }
+    }
+
+    console.log(result);
+    return result;
+}

@@ -16,22 +16,21 @@ from sklearn.naive_bayes import GaussianNB
 
 def train_preprocess(dataset):
   y=dataset['target'].values
-  dataset.drop(['target'],inplace=True,axis=1)
-  X=dataset.iloc[:,:].values
+  X=dataset.iloc[:,:-1].values
 
   if (len(set (y))<15):
     TYPE='C'
   else:
     TYPE='R'
   
-  X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2,random_state=0)
+  X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.2)
 
   if (TYPE=='C'):
     try:
       pipeline_lr=Pipeline([('scalar1',StandardScaler()),
-                      ('lr_classifier',LogisticRegression())])
+                            ('lr_classifier',LogisticRegression())])
       pipeline_svc=Pipeline([('scalar2',StandardScaler()),
-                        ('SVC_classifier',SVC(kernel='rbf'))])
+                             ('SVC_classifier',SVC(kernel='rbf'))])
       pipeline_dt=Pipeline([('scalar3',StandardScaler()),
                             ('dt_classifier',DecisionTreeClassifier())])
       pipeline_rf=Pipeline([('scalar4',StandardScaler()),
@@ -45,13 +44,12 @@ def train_preprocess(dataset):
 
       for i in pipelines:
         i.fit(X_train,y_train)
-      model_scores={pipe_dict[i]:model.score(X_test,y_test) for i,model in enumerate(pipelines)}
+      model_scores={pipe_dict[i]:round(model.score(X_test,y_test)*100,2) for i,model in enumerate(pipelines)}
 
     except Exception as e:
       return -1,str(e) + '[Error During ETL]',{}
 
     return 0, 'DONE', model_scores
-        #print('{} Pipeline_Accuracy : {}  '.format(pipe_dict[i],model.score(X_test,y_test)))
 
   else:
     try:
@@ -66,7 +64,7 @@ def train_preprocess(dataset):
 
       for i in pipelines:
         i.fit(X_train,y_train)
-      model_scores={pipe_dict[i]:model.score(X_test,y_test) for i,model in enumerate(pipelines)}
+      model_scores={pipe_dict[i]:round(model.score(X_test,y_test)*100,2) for i,model in enumerate(pipelines)}
 
     except Exception as e:
       return -1,str(e) + '[Error During ETL]',{}

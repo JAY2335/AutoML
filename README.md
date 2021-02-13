@@ -1,4 +1,4 @@
-# AutoML
+# 🔥AutoML🔥
 > Your one-stop for developing automated machine learning pipelines!
 
 ## What is it?
@@ -8,7 +8,7 @@ It also produces specific model accuracy plots for user to know which model suit
 Very simplistic and easy design which enables even beginners to follow easily.
 
 ## Top Features
-- Developed with 6 classification algorithms + 4 regression algorithms.
+- Developed with 6 classification algorithms + 4 regression algorithms🚨
 - Preprocess broken dataset automatically within few seconds⚡️
 - Auto-generated visualisations for each stage of preprocessing for user to note their decisions ✅
 - Amazing Chart analysis of accuracies of models, so that user can analyse the best model for their dataset📝
@@ -24,6 +24,8 @@ cd AutoML
 npm install
 npm start
 ```
+
+## Future Updates
 
 ## Powered by
 - React JS

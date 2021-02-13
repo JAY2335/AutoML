@@ -1,0 +1,27 @@
+.text{
+    position: absolute;
+    left:20px;
+    font-weight: bolder;
+    font-size: x-large;
+}
+#refone{
+    
+    color: white;
+    position: absolute;
+    right:25px;
+    font-weight: bolder;
+}
+#reftwo{
+    
+    color: white;
+    position: absolute;
+    right:90px;
+    font-weight: bolder;
+    
+}
+nav{
+    background-color: teal;
+    z-index: -2;
+}
+
+

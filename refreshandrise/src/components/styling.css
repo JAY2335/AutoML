@@ -1,0 +1,110 @@
+.left{
+    background-color:white;
+    width: 40%;
+    height:690px;
+
+  }
+  .right{
+    position: absolute;
+    background-color:rgba(245, 245, 245, 0.863);
+    width:60%;
+    height:690px;
+    right:0px;
+    overflow: hidden;
+    z-index: -3;
+  
+  }
+  
+  .flogo{
+    opacity:0.8;
+    width: 70%;
+    height:auto;
+    position: relative;
+    top: 120px;
+    
+  }
+  
+
+  .input-box {
+      width: 75%;
+      position: relative;
+      left:55px;
+      z-index: 1;
+      color: white;
+      
+  }
+
+  .login-form{
+      opacity: 0.7;
+      width:65%;
+      margin:auto;
+      position:relative;
+      top:150px;
+      padding:10px 10px 20px 10px;
+      border:solid;
+      border-radius:5px;
+      border-width: 5px;
+      color: teal;
+      transition-property:opacity ;
+      background-color: rgba(245, 245, 245, 0.863);
+      transition: all .2s ease-in-out;
+      
+      
+      
+
+  }
+  
+
+  .login-form:hover{
+    
+      opacity: 1;
+      transform: scale(1.05)  ;
+      
+  }
+  .login-form:hover::before{
+      transform: skew(0);
+      opacity: 1;
+  }
+
+  .button button{
+      width:20%;
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bolder;
+      border-radius: 2px;
+      border-color: teal;
+      border-width: 2px;
+      border-style: outset;
+
+      color: teal;
+      font-size: 20px;
+      font-weight: 100;
+      padding: 5px;
+      fill: teal;
+      
+      
+      
+
+      
+  }
+  .button button:hover{
+      background-color: teal;
+      color: white;
+  }
+
+  .label{
+      font-size: 15px;
+      color: teal;
+  }
+  .quote{
+      font-size: 35px;
+      position:absolute;
+      bottom:20px;
+      text-align: center;
+      left: 130px;
+      color:#1F85DE
+      
+  }
+  .quote span{
+      color: rgb(15, 189, 15);
+  }

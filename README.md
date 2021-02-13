@@ -21,11 +21,14 @@ Very simplistic and easy design which enables even beginners to follow easily.
 ```bash
 git clone https://github.com/MSAneesh/AutoML.git
 cd AutoML
+cd App
 npm install
 npm start
 ```
 
 ## Future Updates
+- model download
+- code download
 
 ## Powered by
 - React JS

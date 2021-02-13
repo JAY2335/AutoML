@@ -1,9 +1,10 @@
 const DUMMY_DATA_1
  = {
-    Students: ['Armin', 'Miguel', 'Rossum'],
-    Results: [1, "null", 100],
-    target: [0, 0, 1]
+    students: [1.0, 5.3, 1.0, 2.4, 1.2, 0.6,2, 2, 4],
+    results: [1, 4, 100, 12, 13, 8, 6, 7, 8],
+    target: [1, 0, 1, 1, 0, 1, 2, 1, 1]
 }
+
 const DUMMY_DATA_2 =     [
     {
      "first_name": "Constantin",
@@ -41,6 +42,7 @@ function api_post(url, data){
     };
     fetch(url, {
         method: 'POST',
+        mode:'cors',
         body: JSON.stringify(data),
         json: JSON.stringify(data),
         headers:new Headers({'content-type': 'application/json'})
@@ -49,50 +51,12 @@ function api_post(url, data){
         .then(data => console.log(data));
 }
 
-function sub_refactor(dataset){
-    const row = new Object(dataset[0]);
-    const key = Object.keys(row);
-    const result =new Object();
-    for(var i=0; i<key.length;i++){
-        result[key[i]] = [];
-    }
-    dataset.forEach(element => {
-        for(var key in element){
-            result[key].push(element[key]);
-        }
-    });
-    console.log(result);
-    return result
-}
-
-
-function csv_json_refactor(path){
-    let csvToJson = require('convert-csv-to-json');
-    let fileInputName = path;
-    let json = csvToJson.formatValueByType().getJsonFromCsv(fileInputName);
-    return sub_refactor(json);
-    
-}
-
-
-// sub_refactor(DUMMY_DATA_2)
-
-// api_post('http://127.0.0.1:5000/api/preprocess?mode=mean', csv_json_refactor('test_iris.csv'))
-api_post('https://a46b8bcd38ab.ngrok.io/api/preprocess?mode=none', DUMMY_DATA_1)
-
-// user gives you data
-// mode=None
-// filing 
-// mode=mean or median or mode
-// npm install convert-csv-to-json --save
-
 const DUMMY_DATA_3
  = {
     students: {0:1, 1:0, 2:5.3, 3: "null"},
     results: {0:1, 1:4, 2:100},
     target: {0:'iris', 1:'marigold', 2:'sunflower'}
 }
-
 
 function response_refactor(dataset){
     let keys = Object.keys(dataset);
@@ -116,5 +80,43 @@ function response_refactor(dataset){
     }
 
     console.log(result);
-    return result;
+
 }
+
+function sub_refactor(dataset){
+    const row = new Object(dataset[0]);
+    const key = Object.keys(row);
+    const result =new Object();
+    for(var i=0; i<key.length;i++){
+        result[key[i]] = [];
+    }
+    dataset.forEach(element => {
+        for(var key in element){
+            result[key].push(element[key]);
+        }
+    });
+    console.log("subrefactor", result);
+    return result
+}
+
+
+function csv_json_refactor(path){
+    let csvToJson = require('convert-csv-to-json');
+    let fileInputName = path;
+    let json = csvToJson.formatValueByType().getJsonFromCsv(fileInputName);
+    return sub_refactor(json);
+    
+}
+
+
+// sub_refactor(DUMMY_DATA_2)
+
+// api_post('http://127.0.0.1:5000/api/preprocess?mode=mean', csv_json_refactor('test_iris.csv'))
+// api_post('https://fat-is-hell.herokuapp.com/api/train', DUMMY_DATA_1)
+response_refactor(DUMMY_DATA_3)
+
+// user gives you data
+// mode=None
+// filing 
+// mode=mean or median or mode
+// npm install convert-csv-to-json --save

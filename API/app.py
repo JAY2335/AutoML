@@ -3,7 +3,7 @@ import os
 import pandas as pd
 from flask_cors import CORS, cross_origin
 from Preprocess.Preprocessing import *
-from Ml_models.models import *
+from Ml_models.Models import *
 import json as j
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
@@ -34,25 +34,26 @@ def preprocess():
     except:
         return {'result': 'no option provided','file': {}}
     FILE_DATA = request.get_json(force=True)
-    DATASET = Nan_converter(pd.DataFrame(FILE_DATA))
-    # DATASET = pd.DataFrame(FILE_DATA)
+    DATASET = pd.DataFrame(FILE_DATA)
     ORIENT = 'columns'
     if OPTION == 'none':
         try:
             json = eval(DATASET.to_json(orient=ORIENT))
-        except:
-            return {'error':'yes'}
-        return {'result': 'YES', 'file': json} if null_checking(DATASET) else {'result': 'NO', 'file': json}
+        except Exception as e:
+            return {'result':str(e), 'file':{}}
+        if null_checking(DATASET) == True:
+            return {'result': 'YES', 'file': json}
+        else:
+            return {'result': 'NO', 'file': json}
     elif OPTION == 'mean' or OPTION == 'median' or OPTION == 'mode':
+        DATASET = Nan_converter(DATASET)
         code, msg_1, dataset = null_processing(DATASET, OPTION.lower()) # UD
         if code == 0:
             code, msg, final_dataset =  encoding(dataset) # UD
             json = eval(final_dataset.to_json(orient=ORIENT))
-            print('p',json)
             return {'result': msg, 'file': json}
         else:
             json = eval(dataset.to_json(orient=ORIENT))
-            # print('e',json)
             return {'result': msg_1, 'file': json}
     else:
         return {'result': 'Invalid Option', 'file': {}}
@@ -89,4 +90,4 @@ def train():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

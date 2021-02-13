@@ -11,22 +11,12 @@ def Nan_converter(dataset):
   # print('ana', dataset)
   # print(type(dataset.Results[1]))
   return dataset
-# def Nan_converter(dataset):
-#   for i in dataset:
-#     for i in list(dataset[f"{i}"])
-
-
-
-
 
 def null_checking(dataset):
-  null_columns=[ i for i in dataset if dataset[f"{i}"].isnull().sum()>0]
-  # res = [ i for i in dataset if dataset[f"{i}"] or ]
-  print(null_columns)
+  null_columns=[ i for i in dataset if dataset[f"{i}"].isnull().sum()>0 or "NaN" in list(dataset[f"{i}"])]
   if (null_columns == []): 
     return False
-  return True
-
+  return True 
 
 def null_processing(dataset, option):
   
@@ -53,11 +43,11 @@ def null_processing(dataset, option):
       y.fillna(method='ffill',inplace=True)
       y.fillna(method='bfill',inplace=True)
     if (option=="mean"):
-      X.fillna(X.mean(),inplace=True)
+      X.fillna(dataset.mean(),inplace=True)
     if (option=="median"):
-      X.fillna(X.median(),inplace=True)
+      X.fillna(dataset.median(),inplace=True)
     if (option=="mode"):
-      X.fillna(X.median(),inplace=True)
+      X.fillna(dataset.median(),inplace=True)
     result=pd.concat([X,y],axis=1)
 
   except Exception as e:
@@ -88,5 +78,6 @@ def encoding(dataset):
     return -1,str(e) + '[Error During Encoding]',dataset
   
   return 0,'DONE PREPROCESSING',result
+
 
 

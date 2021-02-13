@@ -30,3 +30,13 @@ npm start
 - Sci-kit learn library
 - Flask Framework
 - Pandas
+
+## Developed by
+- [Aneesh M S](https://github.com/MSAneesh)
+- [Yuthishtra Prasad](https://github.com/Yuthish)
+- [Jofin F Archbald](https://github.com/j0fiN)
+
+
+<p align="center">
+	With :heart: by <a href="https://github.com/JAY2335" target="_blank">JAY</a>
+</p>

@@ -5,17 +5,8 @@ import {BrowserRouter,Route} from 'react-router-dom'
 import Home from './components/home'
 import Navbar from './components/Navbar/Navbar'
 import Signup from './components/Signuppage/Signup'
-
-
-import Upload from './components/Upload/upload'
 import Uploadtwo from './components/Upload/uploadtwo'
 import Train from './components/Train/train'
-
-
-
-
-
-
 
 
 function App(){

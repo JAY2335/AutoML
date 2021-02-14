@@ -1,5 +1,5 @@
 <h1 align="center">:sparkles:AutoML:sparkles:</h1>
-<i align="center">Your one-stop for developing automated machine learning pipelines!</i>
+<p align="center"><i align="center">Your one-stop for developing automated machine learning pipelines!</i></p>
 
 ## What is it?
 AutoML is a web based no-code Machine Learning application which enable users to perform machine learning algorithms just by uploading a

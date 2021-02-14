@@ -37,9 +37,11 @@ npm start
 - Pandas
 
 ## Developed by
+- [Jofin F Archbald](https://github.com/j0fiN)
 - [Aneesh Sarjit](https://github.com/MSAneesh)
 - [Yuthishtra Prasad](https://github.com/Yuthish)
-- [Jofin F Archbald](https://github.com/j0fiN)
+
+
 
 
 <p align="center">

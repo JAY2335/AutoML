@@ -1,4 +1,4 @@
-<h1 align="center">🔥AutoML🔥</h1>
+<h1 align="center">:sparkles:AutoML:sparkles:</h1>
 > Your one-stop for developing automated machine learning pipelines!
 
 ## What is it?

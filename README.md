@@ -1,5 +1,5 @@
-# 🔥AutoML🔥
-> Your one-stop for developing automated machine learning pipelines!
+<h1 align="center">:sparkles:AutoML:sparkles:</h1>
+<p align="center"><i align="center">Your one-stop for developing automated machine learning pipelines!</i></p>
 
 ## What is it?
 AutoML is a web based no-code Machine Learning application which enable users to perform machine learning algorithms just by uploading a
@@ -27,8 +27,8 @@ npm start
 ```
 
 ## Future Updates
-- model download
-- code download
+- We will be to implementing a secure and a robust way to *download* models for all the algorithms.
+- Implementing a *copy-code* feature where user can also copy the  language script for preprocessing and model training.
 
 ## Powered by
 - React JS
@@ -37,7 +37,7 @@ npm start
 - Pandas
 
 ## Developed by
-- [Aneesh M S](https://github.com/MSAneesh)
+- [Aneesh Sarjit](https://github.com/MSAneesh)
 - [Yuthishtra Prasad](https://github.com/Yuthish)
 - [Jofin F Archbald](https://github.com/j0fiN)
 

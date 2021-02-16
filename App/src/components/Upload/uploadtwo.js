@@ -18,6 +18,7 @@ function CsvRead(props) {
    const [table,setTable]=useState(false)
    const [button,setButton]=useState(false)
    const{columns,setColumns,data,setData}=props
+   const [visible,setVisiblity]=useState(true)
    
   
   var list=[]
@@ -37,6 +38,7 @@ function CsvRead(props) {
     var csv = reader.result;
     console.log(csv)
     var lines = csv.split("\r\n");
+    setVisiblity(false)
    
     
     
@@ -86,6 +88,7 @@ function CsvRead(props) {
         mode:'cors',
         body:JSON.stringify(sub_refactor(result)),
         json: JSON.stringify(sub_refactor(result)),
+        timeout:6000,
         headers:new Headers({'content-type': 'application/json'})
             
         })
@@ -131,29 +134,35 @@ function CsvRead(props) {
         <div className="body">
           <div className="uploadone">
           <div className="message">
+            {visible?
+            <div>
             <div class="alert alert-success warning container " role="alert">
              <h1 class="alert-heading " style={{color:'rgba(232, 158, 21)'}}>VERY IMPORTANT!</h1>
             <h5 style={{color:'rgba(64,224,208)'}}>RENAME THE TARGET COLUMN AS <strong>'target'</strong></h5>
             <h5 style={{color:'rgba(64,224,208)'}}>FOR GOOD ACCURACIES REMOVE UNWANTED FEATURES</h5>
             
             </div>
+            <ReactFileReader handleFiles={handleFiles} fileTypes={'.csv'}>
+       <button className='btn btn-outline-secondary upload'>Upload</button>
+      </ReactFileReader>
+            </div>
+            :null}
             </div>
             
-      <ReactFileReader handleFiles={handleFiles} fileTypes={'.csv'}>
-        <button className='btn btn-outline-secondary upload'>Upload</button>
-      </ReactFileReader>
+      
       </div>
       
-            
+      {button?<Submitone ></Submitone>:null}     
       {scan?<Mode columns={columns} setColumns={setColumns} data={data} setData={setData} />:null}
       {table?<DataTable
         pagination
         highlightOnHover
         columns={columns}
         data={data}
+        
       />:null}
 
-      {button?<Submitone ></Submitone>:null}
+      
 
 
       

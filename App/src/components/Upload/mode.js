@@ -15,6 +15,7 @@ var collist=[]
 function Mode(props) {
     const [scan, setScan] = useState(false)
     var {columns, setColumns , data, setData,trainingdata}=props
+    const [visible,setVisiblity]=useState(true)
     
     
     
@@ -22,10 +23,12 @@ function Mode(props) {
     const handleChange=(e)=>{
         setColumns([])
         setData([])
+        setVisiblity(false)
         console.log(e.target.value)
         fetch(`https://fat-is-hell.herokuapp.com/api/preprocess?mode=${e.target.value}`, {
         method: 'POST',
         mode:'cors',
+        timeout:6000,
         body: JSON.stringify(sub_refactor(result)),
         json: JSON.stringify(sub_refactor(result)),
         headers:new Headers({'content-type': 'application/json'})
@@ -98,6 +101,7 @@ function Mode(props) {
     }
     return (
         <div>
+            {visible?
             <div className="message">
             <div class="alert alert-success " role="alert">
              <h1 class="alert-heading" style={{color:'rgba(228, 235, 23)'}}>Oh no Oh no Oh no no no no no!</h1>
@@ -123,19 +127,12 @@ function Mode(props) {
            </form>
            </div>
                 </div>
-                </div>
+                </div>:null}
             
           
 
 
-            <div className="modes">
-            <DataTable
-        pagination
-        highlightOnHover
-        columns={columns}
-        data={data}
-      />
-            </div>
+            
             
             
 
@@ -149,6 +146,14 @@ function Mode(props) {
             
 
             {scan?<Submittwo ></Submittwo>:null}
+            <div className="modes">
+            <DataTable
+        pagination
+        highlightOnHover
+        columns={columns}
+        data={data}
+      />
+            </div>
 
             
             

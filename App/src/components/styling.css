@@ -44,7 +44,7 @@
       border:solid;
       border-radius:5px;
       border-width: 5px;
-      color: teal;
+      color: #1f2833;
       transition-property:opacity ;
       background-color: rgba(245, 245, 245, 0.863);
       transition: all .2s ease-in-out;
@@ -72,15 +72,15 @@
       margin-top: 10px;
       font-weight: bolder;
       border-radius: 2px;
-      border-color: teal;
+      border-color: #1f2833;
       border-width: 2px;
       border-style: outset;
 
-      color: teal;
+      color: #1f2833;
       font-size: 20px;
       font-weight: 100;
       padding: 5px;
-      fill: teal;
+      fill: #1f2833;
       
       
       
@@ -88,13 +88,13 @@
       
   }
   .button button:hover{
-      background-color: teal;
+      background-color: #1f2833;
       color: white;
   }
 
   .label{
       font-size: 15px;
-      color: teal;
+      color: #1f2833;
   }
   .quote{
       font-size: 35px;
@@ -102,9 +102,38 @@
       bottom:20px;
       text-align: center;
       left: 130px;
-      color:#1F85DE
+      color:#1f2833;
       
   }
   .quote span{
       color: rgb(15, 189, 15);
   }
+  .guest{
+      position: absolute;
+      bottom:150px;
+      right:405px;
+      
+      
+  }
+  .guest a{
+    width:150px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bolder;
+    border-radius: 2px;
+    border-color: #1f2833;
+    border-width: 2px;
+    border-style: outset;
+    text-decoration: none;
+
+    color: #1f2833;
+    font-size: 20px;
+    font-weight: 100;
+    padding: 5px;
+    fill: #1f2833;
+
+  }
+  .guest a:hover{
+    background-color: #1f2833;
+    color: white;
+}

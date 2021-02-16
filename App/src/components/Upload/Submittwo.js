@@ -54,6 +54,7 @@ function Submittwo(props) {
     }
     return (
         <div>
+            <h1 class="alert-heading" style={{color:'rgba(228, 235, 23)'}}>Your model is ready for training!!!</h1>
             <a className="btn btn-outline-secondary training"  onClick={()=>{training(rtwo)}}    >START TRAINING</a>
            
             

@@ -64,9 +64,14 @@ class Home extends Component{
                                 <button>Submit</button>
                             </div>
                         </form>
+                        
     
                     </div>
                 </div>
+                
+                </div>
+                <div className="guest">
+                        <a href="/fileupload">Try as Guest</a>
                 </div>
     
             </div>

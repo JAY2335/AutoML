@@ -44,7 +44,7 @@ def train_preprocess(dataset):
 
       for i in pipelines:
         i.fit(X_train,y_train)
-      model_scores={pipe_dict[i]:round(model.score(X_test,y_test)*100,2) for i,model in enumerate(pipelines)}
+      model_scores={pipe_dict[i]:round(model.score(X_test,y_test)*100,4) for i,model in enumerate(pipelines)}
 
     except Exception as e:
       return -1,str(e) + '[Error During ETL]',{}
@@ -64,7 +64,7 @@ def train_preprocess(dataset):
 
       for i in pipelines:
         i.fit(X_train,y_train)
-      model_scores={pipe_dict[i]:round(model.score(X_test,y_test)*100,2) for i,model in enumerate(pipelines)}
+      model_scores={pipe_dict[i]:round(model.score(X_test,y_test),4) for i,model in enumerate(pipelines)}
 
     except Exception as e:
       return -1,str(e) + '[Error During ETL]',{}

@@ -44,6 +44,8 @@ def preprocess():
         if null_checking(DATASET) == True:
             return {'result': 'YES', 'file': json}
         else:
+            code, msg, final_dataset =  encoding(DATASET)
+            json = eval(final_dataset.to_json(orient=ORIENT))
             return {'result': 'NO', 'file': json}
     elif OPTION == 'mean' or OPTION == 'median' or OPTION == 'mode':
         DATASET = Nan_converter(DATASET)

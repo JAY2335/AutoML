@@ -56,14 +56,17 @@ function Train() {
   options={ { maintainAspectRatio: false,
                 legend :{display:false},
 
+
             scales: {
                 
                 xAxes: [{
                     ticks: {
                         suggestedMin: 0,
                         suggestedMax: 100,
+                
                         fontColor:'white',
-                        fontSize:18
+                        fontSize:18,
+                        
                 }
                 ,gridLines: { drawOnChartArea: false,
                               color:'white',
@@ -71,10 +74,11 @@ function Train() {
             }],
                 yAxes: [{
                     ticks: {
-                        suggestedMin: 0,
-                        suggestedMax: 100,
+                        
                         fontColor:'white',
-                        fontSize:18
+                        fontSize:18,
+                        min:0,
+                        max:100
                 }
                 ,gridLines: { drawOnChartArea: false,
                               color:'white',

@@ -5,6 +5,7 @@ import {sub_refactor,response_refactor} from '../impfunc'
 
 import {result, trainingdatasetone} from "../Upload/uploadtwo"
 import { useHistory } from "react-router-dom";
+import '../Upload/submit.css'
 
 
 var rone;
@@ -63,7 +64,10 @@ function Submitone() {
     return (
         <div>
             <h1 class="alert-heading" style={{color:'rgba(228, 235, 23)'}}>Your model is ready for training!!!</h1>
-            <a className="btn btn-outline-secondary training"  onClick={()=>{training(rone)}} >START TRAINING</a>
+            <a className="btn btn-outline-secondary training"  onClick={()=>{training(rone)}}  >START TRAINING</a>
+            <br></br>
+            <hr></hr>
+            <hr></hr>
            
            
             

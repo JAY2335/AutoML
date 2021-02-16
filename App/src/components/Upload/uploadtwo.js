@@ -110,6 +110,9 @@ function CsvRead(props) {
                 setButton(true)
                 trainingdatasetone=data.file 
                 console.log(trainingdatasetone)
+                // list=arrange(data.file)
+                // setColumns(columns)
+                // setData(list)
                 
             }
             else{
@@ -123,6 +126,7 @@ function CsvRead(props) {
     .catch(err=>{
         console.log(err)
     })
+    
 
 
   }

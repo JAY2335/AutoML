@@ -14,8 +14,17 @@ Very simplistic and easy design which enables even beginners to follow easily.
 - Amazing Chart analysis of accuracies of models, so that user can analyse the best model for their dataset📝
 
 ## Screenshots
-
-
+### All the missing data in  user's dataset are filling with the respective value button(mean, median, mode)
+![alt text](https://github.com/JAY2335/AutoML/blob/main/media/Missingvalues.PNG)
+------
+### Dataset is made training-ready before the train phase
+![alt text](https://github.com/JAY2335/AutoML/blob/main/media/ProcessedData.PNG)
+------
+### And we render an interactive graph system for user to analyze the models
+![alt text](https://github.com/JAY2335/AutoML/blob/main/media/Classification.PNG)
+![alt text](https://github.com/JAY2335/AutoML/blob/main/media/Regression.PNG)
+  
+------
 
 ## To get started
 ```bash

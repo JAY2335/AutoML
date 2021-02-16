@@ -130,6 +130,15 @@ function CsvRead(props) {
     return (
         <div className="body">
           <div className="uploadone">
+          <div className="message">
+            <div class="alert alert-success warning container " role="alert">
+             <h1 class="alert-heading " style={{color:'rgba(232, 158, 21)'}}>VERY IMPORTANT!</h1>
+            <h5 style={{color:'rgba(64,224,208)'}}>RENAME THE TARGET COLUMN AS <strong>'target'</strong></h5>
+            <h5 style={{color:'rgba(64,224,208)'}}>FOR GOOD ACCURACIES REMOVE UNWANTED FEATURES</h5>
+            
+            </div>
+            </div>
+            
       <ReactFileReader handleFiles={handleFiles} fileTypes={'.csv'}>
         <button className='btn btn-outline-secondary upload'>Upload</button>
       </ReactFileReader>

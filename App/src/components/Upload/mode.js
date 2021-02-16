@@ -100,23 +100,25 @@ function Mode(props) {
         <div>
             <div className="message">
             <div class="alert alert-success " role="alert">
-             <h4 class="alert-heading">Well done!</h4>
-            <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+             <h1 class="alert-heading" style={{color:'rgba(228, 235, 23)'}}>Oh no Oh no Oh no no no no no!</h1>
+            <h5 style={{color:'rgba(64,224,208)'}}>IT SEEMS LIKE YOUR DATASET HAS SOME MISSING VALUES.</h5>
+            <h6 style={{color:'rgba(64,224,208)'}}>No problem we will do the hardwork for you...</h6>
             <hr></hr>
-               <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+               <h2 class="mb-0" style={{color:'rgba(255, 153, 0)'}}>HOW DO YOU WANT TO FILL YOUR MISSING VALUES?</h2>
 
             
                <div className="options">
             <form  onChange={handleChange}>
              <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
-                  <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autoComplete="off"  value={"median"}/>
-                  <label className="btn btn-outline-success" htmlFor="btnradio1">Median</label>
-
+                  
                   <input type="radio" className="btn-check" name="btnradio" id="btnradio2" autoComplete="off" value={"mean"}  />
-                  <label className="btn btn-outline-success" htmlFor="btnradio2">Mean</label>
+                  <label className="btn btn-outline-secondary upload px-4 mean" htmlFor="btnradio2">Mean</label>
+                  
+                  <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autoComplete="off"  value={"median"}/>
+                  <label className="btn btn-outline-secondary upload px-4 median" htmlFor="btnradio1">Median</label>
 
                   <input type="radio" className="btn-check" name="btnradio" id="btnradio3" autoComplete="off" value={"mode"} />
-                 <label className="btn btn-outline-success" htmlFor="btnradio3">Mode</label>
+                 <label className="btn btn-outline-secondary upload px-4 mode" htmlFor="btnradio3">Mode</label>
                  </div>
            </form>
            </div>

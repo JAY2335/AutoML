@@ -34,14 +34,13 @@ function Train() {
     
     return (
         <div>
-            <h1 style={{color:"white"}}>Models Accuracies</h1>
+            <h1 style={{color:"white",paddingBottom:'10px'}}>Models Accuracies</h1>
             <h6 className="data">{rone}</h6>
           
             <Bar data={{
                 labels:label,
                 
-        datasets: [{
-            label:"Percentage",  
+        datasets: [{ 
             barPercentage: 0.5,
             barThickness: 100,
             maxBarThickness: 100,
@@ -55,6 +54,7 @@ function Train() {
   width={500}
   height={500}
   options={ { maintainAspectRatio: false,
+                legend :{display:false},
 
             scales: {
                 

@@ -62,7 +62,7 @@ function Submitone() {
     }
     return (
         <div>
-            <a className="btn btn-success"  onClick={()=>{training(rone)}}   >START TRAINING</a>
+            <a className="btn btn-outline-secondary training"  onClick={()=>{training(rone)}} >START TRAINING</a>
             <h6>{rone}</h6>
            
             

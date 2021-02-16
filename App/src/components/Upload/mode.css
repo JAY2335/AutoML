@@ -13,4 +13,12 @@
     padding-top: 1.5%;
     padding-left: 10px;
     padding-right: 10px;
+    
+}
+.alert{
+    background-color: #151722;
+    border-style: solid;
+    border-color: black;
+    color:white;
+    border-radius: 8px;
 }

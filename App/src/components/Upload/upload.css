@@ -1,16 +1,43 @@
 
 
 .upload:hover{
-    background-color: #66fcf1
+    background-color: #66fcf1;
+    color:black;
+    font-weight: bold;
 }
 .upload{
     
     color:  white;
+    font-weight: bold;
+    border-radius: 8px;
+    width:8%;
+    margin-top: 2%;
+    
 }
 .uploadone{
     padding-top: 2%;
+    padding-bottom: 2%;
 }
+.warning{
+    background-color: #151722;
+    border-style: solid;
+    border-color: black;
+    color:white;
+    border-radius: 8px;
+}
+.training{
+    color:  white;
+    font-weight: bold;
+    border-radius: 8px;
+    width:12%;
+    margin-top: 2%;
 
+}
+.training:hover{
+    background-color: #66fcf1;
+    color:black;
+    font-weight: bold;
+}
 
 
 body{

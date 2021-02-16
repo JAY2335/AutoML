@@ -54,7 +54,7 @@ function Submittwo(props) {
     }
     return (
         <div>
-            <a className="btn btn-success"  onClick={()=>{training(rtwo)}}    >START TRAINING</a>
+            <a className="btn btn-outline-secondary training"  onClick={()=>{training(rtwo)}}    >START TRAINING</a>
            
             
             

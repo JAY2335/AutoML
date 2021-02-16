@@ -3,13 +3,22 @@
     left:20px;
     font-weight: bolder;
     font-size: x-large;
+    color: white;
+    text-decoration: none;
+    
+
 }
+.text:hover{
+    color:white;
+}
+
 #refone{
     
     color: white;
     position: absolute;
     right:25px;
     font-weight: bolder;
+    text-decoration: none;
 }
 #reftwo{
     
@@ -17,10 +26,11 @@
     position: absolute;
     right:90px;
     font-weight: bolder;
+    text-decoration: none;
     
 }
 nav{
-    background-color: teal;
+    background-color: #1f2833;
     z-index: -2;
 }
 

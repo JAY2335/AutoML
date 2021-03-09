@@ -14,6 +14,9 @@ Very simplistic and easy design which enables even beginners to follow easily.
 - Amazing Chart analysis of accuracies of models, so that user can analyse the best model for their dataset📝
 
 ## Screenshots📸
+### Basic Flowchart
+![alt text](https://github.com/JAY2335/AutoML/blob/main/media/flow%20chart.PNG)
+
 ### All the missing data in  user's dataset are filling with the respective value button(mean, median, mode)
 ![alt text](https://github.com/JAY2335/AutoML/blob/main/media/Missingvalues.PNG)
 ------
